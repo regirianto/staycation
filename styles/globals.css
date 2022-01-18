@@ -1,16 +1,54 @@
-html,
-body {
-  padding: 0;
+/* .img-thumb {
+}
+
+.img-thumb::after {
+  content: "$22 per night";
+  width: 100%;
+  height: 100%;
+  background: red;
+  position: relative;
+} */
+
+.heroImg {
+  position: relative;
+}
+.heroImg img {
+  border-radius: 100px 15px 15px 15px;
+}
+.heroImg::before {
+  content: "";
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  bottom: -40px;
+  right: -50px;
+  border-radius: 100px 15px 15px 15px;
+  position: absolute;
+  background-image: url("/img/frame.png");
+}
+
+.place {
+  font-weight: 400;
+  font-size: 20px;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.loc {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0;
+}
+.swiper-container {
+  width: 480px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@media screen and (min-width: 640px) {
+  .swiper-container {
+    width: 640px;
+  }
 }
 
-* {
-  box-sizing: border-box;
+@media screen and (min-width: 768px) {
+  .swiper-container {
+    width: 768px;
+  }
 }
