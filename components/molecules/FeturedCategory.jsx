@@ -13,7 +13,7 @@ const FeturedCategory = (props) => {
               width={263}
               height={180}
               alt=""
-              className="d-inline-block"
+              className="d-inline-block img-thumb"
             />
           </a>
         </Link>

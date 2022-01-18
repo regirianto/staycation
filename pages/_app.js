@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "../styles/scss/bootstrap.scss";
 import { useEffect } from "react";
 import Navbar from "../components/organisms/Navbar";
+import Footer from "../components/organisms/Footer";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

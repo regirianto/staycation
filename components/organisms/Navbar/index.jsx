@@ -1,12 +1,11 @@
+import Logo from "../../molecules/Logo";
 import NavItem from "./NavItem";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white mb-5 shadow-sm sticky-top py-3">
       <div className="container ">
-        <a className="navbar-brand fs-4" href="#">
-          <span className="text-primary">Stay</span>cation.
-        </a>
+        <Logo />
         <button
           className="navbar-toggler"
           type="button"

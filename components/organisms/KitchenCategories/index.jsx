@@ -8,12 +8,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { A11y, Autoplay, Mousewheel, Pagination, Scrollbar } from "swiper";
+import { A11y, Autoplay, Pagination, Scrollbar } from "swiper";
 
-const LivingRoomCategories = () => {
+const KitchenCategories = () => {
   return (
-    <section className="living-room mt-5">
-      <h2>Hotels with large living room</h2>
+    <section className="backyard mt-5">
+      <h2>Apartments with kitchen set</h2>
       <div className="row mt-4">
         <Swiper
           modules={[Pagination, A11y, Autoplay, Scrollbar]}
@@ -34,35 +34,35 @@ const LivingRoomCategories = () => {
         >
           <SwiperSlide>
             <FeturedCategory
-              img="/img/image-category-5.jpg"
+              img="/img/image-category-10.jpg"
               place="Anggana"
               loc="Bogor,Indonesia"
             />
           </SwiperSlide>
           <SwiperSlide>
             <FeturedCategory
-              img="/img/image-category-6.jpg"
+              img="/img/image-category-12.jpg"
               place="Anggana"
               loc="Bogor,Indonesia"
             />
           </SwiperSlide>
           <SwiperSlide>
             <FeturedCategory
-              img="/img/image-category-7.jpg"
+              img="/img/image-category-1.jpg"
               place="Anggana"
               loc="Bogor,Indonesia"
             />
           </SwiperSlide>
           <SwiperSlide>
             <FeturedCategory
-              img="/img/image-category-8.jpg"
+              img="/img/image-category-12.jpg"
               place="Anggana"
               loc="Bogor,Indonesia"
             />
           </SwiperSlide>
           <SwiperSlide>
             <FeturedCategory
-              img="/img/image-category-9.jpg"
+              img="/img/image-category-11.jpg"
               place="Anggana"
               loc="Bogor,Indonesia"
             />
@@ -80,4 +80,4 @@ const LivingRoomCategories = () => {
   );
 };
 
-export default LivingRoomCategories;
+export default KitchenCategories;
