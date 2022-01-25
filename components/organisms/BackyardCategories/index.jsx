@@ -1,4 +1,4 @@
-import { A11y, Autoplay, Pagination, Scrollbar } from "swiper";
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -14,11 +14,11 @@ const BackyardCategories = () => {
       <h2>Houses with beauty backyard</h2>
       <div className="row mt-4">
         <Swiper
-          modules={[Pagination, A11y, Autoplay, Scrollbar]}
+          modules={[Pagination, A11y, Autoplay, Scrollbar, Navigation]}
           spaceBetween={4}
           slidesPerView={2}
           autoplay={true}
-          pagination={{ clickable: true }}
+          pagination={{ clickable: true, dynamicBullets: true }}
           breakpoints={{
             // when window width is >= 640px
             640: {

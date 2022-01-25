@@ -26,10 +26,10 @@ const Testimonial = () => {
               What a great trip with my family and I should try again next time
               soon ...
             </h4>
-            <p className="fw-light">Angga, Product Designer</p>
+            <p className="fw-light text-seccondary">Angga, Product Designer</p>
           </div>
           <div className="col-md mt-5">
-            <Button title="Read Their Story" />
+            <Button title="Read Their Story" shadow />
           </div>
         </div>
       </div>

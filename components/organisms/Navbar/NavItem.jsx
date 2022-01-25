@@ -1,12 +1,14 @@
-const NavItem = (props) => {
-  const { title, href, active } = props;
+import Link from "next/link";
 
-  const classNames = `nav-link text-secondary ${active ? "active" : ""}`;
+const NavItem = (props) => {
+  const { title, href, active = false } = props;
+
+  const classNames = `nav-link text-secondary ${active && "active"}`;
   return (
     <li className="nav-item ">
-      <a className={classNames} href={href}>
-        {title}
-      </a>
+      <Link href={href}>
+        <a className={classNames}>{title}</a>
+      </Link>
     </li>
   );
 };

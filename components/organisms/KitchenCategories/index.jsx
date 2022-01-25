@@ -20,7 +20,7 @@ const KitchenCategories = () => {
           spaceBetween={4}
           slidesPerView={2}
           autoplay={true}
-          pagination={{ clickable: true }}
+          pagination={{ clickable: true, dynamicBullets: true }}
           breakpoints={{
             // when window width is >= 640px
             640: {

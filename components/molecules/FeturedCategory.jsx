@@ -4,7 +4,7 @@ import Link from "next/link";
 const FeturedCategory = (props) => {
   const { img, place, loc } = props;
   return (
-    <div className="col-md mb-5 px-1">
+    <div className="col-md mb-5 px-2">
       <div className="imgWrapper">
         <Link href="/">
           <a>

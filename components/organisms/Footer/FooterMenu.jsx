@@ -4,7 +4,7 @@ const FooterMenu = (props) => {
   const { title, link1, link2, link3, href1, href2, href3 } = props;
   return (
     <div className="col-md-4">
-      <h5>{title}</h5>
+      <h5 className="mb-3">{title}</h5>
       <p className="mb-2">
         <a
           className="text-decoration-none text-secondary fw-light"

@@ -8,14 +8,12 @@ import Testimonial from "../components/organisms/Testimonial";
 export default function Home() {
   return (
     <>
-      <div className="container mt-5 overflow-hidden">
-        <Hero />
-        <MostPicked />
-        <BackyardCategories />
-        <LivingRoomCategories />
-        <KitchenCategories />
-        <Testimonial />
-      </div>
+      <Hero />
+      <MostPicked />
+      <BackyardCategories />
+      <LivingRoomCategories />
+      <KitchenCategories />
+      <Testimonial />
     </>
   );
 }

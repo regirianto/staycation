@@ -1,9 +1,10 @@
 import Logo from "../../molecules/Logo";
 import NavItem from "./NavItem";
-
+import { useRouter } from "next/router";
 const Navbar = () => {
+  const router = useRouter();
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white mb-5 shadow-sm sticky-top py-3">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white mb-5 shadow-sm sticky-top py-2">
       <div className="container ">
         <Logo />
         <button
@@ -22,8 +23,16 @@ const Navbar = () => {
           id="navbarNav"
         >
           <ul className="navbar-nav ">
-            <NavItem title="Home" href="#" active />
-            <NavItem title="Browse By" href="#" />
+            <NavItem
+              title="Home"
+              href="/"
+              active={router.pathname == "/" && true}
+            />
+            <NavItem
+              title="Browse By"
+              href="/browse"
+              active={router.pathname == "/browse" && true}
+            />
             <NavItem title="Stories" href="#" />
             <NavItem title="Agent" href="#" />
           </ul>

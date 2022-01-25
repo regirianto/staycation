@@ -3,7 +3,7 @@ import FooterLink from "./FooterMenu";
 
 const Footer = () => {
   return (
-    <div className="container py-3 ">
+    <div className="container py-3">
       <div className="row overflow-hidden">
         <div className="col-md-4">
           <p className=" fs-3">
@@ -27,19 +27,19 @@ const Footer = () => {
                   href3="/"
                 />
                 <FooterMenu
-                  title="For Beginners"
-                  link1="New Account"
-                  link2="Start Booking a Room"
-                  link3="Use Payments"
+                  title="Explore Us"
+                  link1="Our Careers"
+                  link2="Privacy"
+                  link3="Terms & Conditions"
                   href1="/s"
                   href2="/"
                   href3="/"
                 />
                 <FooterMenu
-                  title="For Beginners"
-                  link1="New Account"
-                  link2="Start Booking a Room"
-                  link3="Use Payments"
+                  title="Connect Us"
+                  link1="Support@staycation.id"
+                  link2="021-2208-1996"
+                  link3="Staycation,Jatibening,Bekasi"
                   href1="/"
                   href2="/"
                   href3="/"
