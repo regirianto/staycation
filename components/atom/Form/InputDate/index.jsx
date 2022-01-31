@@ -24,9 +24,9 @@ const InputDate = () => {
           type="text"
           className="form-control text-center"
           disabled
-          placeholder={`${moment(data[0].startDate).format(
-            "DD MMM"
-          )} - ${moment(data[0].endDate).format("DD MMM")}`}
+          value={`${moment(data[0].startDate).format("DD MMM")} - ${moment(
+            data[0].endDate
+          ).format("DD MMM")}`}
           aria-label="Username"
           aria-describedby="basic-addon1"
         />

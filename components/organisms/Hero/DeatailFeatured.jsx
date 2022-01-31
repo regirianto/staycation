@@ -3,7 +3,7 @@ import Reached from "./Reached";
 
 const DeatailFeatured = () => {
   return (
-    <div className="col-md-6">
+    <div className="col-lg-6">
       <h1 className="lh-base fw-bolder">
         Forget Busy Work,
         <br />

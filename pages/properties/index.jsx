@@ -76,10 +76,10 @@ const index = () => {
           </div>
           <div className="col-lg-6">
             <div className="card p-5 border border-info border-1 rounded-3">
-              <h5 className="mb-3">Start Booking</h5>
-              <h4>
-                <span className="text-success">$280 </span>per night
-              </h4>
+              <h3 className="mb-3">Start Booking</h3>
+              <h3>
+                <span className="text-success fs-3">$280 </span>per night
+              </h3>
               <div className="row d-flex flex-column mt-1  align-items-center justify-content-center">
                 <div className="col-md mb-2">
                   <p className="text-start  my-1">How long you will stay?</p>
@@ -88,14 +88,23 @@ const index = () => {
                 <div className="col-md mb-3">
                   <p className="text-start my-1">Pick a Date</p>
                   <InputDate />
+                  <p className="mt-3">
+                    <span className="text-info fw-light">You will pay </span>
+                    $480 USD <span className="text-info fw-light">
+                      for
+                    </span>{" "}
+                    {data[0].perNight()} night
+                  </p>
                 </div>
               </div>
-              <p>
-                <span className="text-info fw-light">You will pay </span>
-                $480 USD <span className="text-info fw-light">per</span>{" "}
-                {data[0].perNight()} night
-              </p>
-              <Button title="Continue to Book" shadow />
+              <div className="col-md">
+                <Button
+                  title="Continue to Book"
+                  addClassName="w-100"
+                  shadow
+                  link="/checkout"
+                />
+              </div>
             </div>
           </div>
           <Testimonial />

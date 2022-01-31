@@ -1,8 +1,7 @@
 import Image from "next/image";
-import style from "../../../styles/FeaturedImg.module.css";
 const FeaturedImg = () => {
   return (
-    <div className={`heroImg col-md-6`}>
+    <div className={`heroImg col-lg-6`}>
       <Image
         src="/img/image 3.png"
         width={520}
