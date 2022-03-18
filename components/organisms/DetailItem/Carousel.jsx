@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const Carousel = (props) => {
-  const { image } = props;
+  const { image, height } = props;
   const IMG_URL = process.env.NEXT_PUBLIC_IMG_URL;
 
   return (
@@ -15,7 +15,7 @@ const Carousel = (props) => {
           return (
             <div
               className={`carousel-item ${i == 0 && "active"}`}
-              style={{ width: "100%", height: "500px" }}
+              style={{ width: "100%", height: height }}
               key={img._id}
             >
               <Image

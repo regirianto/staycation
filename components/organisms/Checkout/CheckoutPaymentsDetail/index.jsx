@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Payments from "../../../molecules/Payments";
 import ButtonPaymentSubmit from "./ButtonPaymentSubmit";
@@ -12,9 +11,6 @@ const CheckoutPayment = () => {
   const { itemID } = useSelector((state) => state.itemReducer);
 
   const subTotal = itemID.price * bookingData.duration;
-  useEffect(() => {
-    console.log(bookingData);
-  }, []);
   return (
     <>
       <div className="img-stepper text-center mb-5">

@@ -42,7 +42,7 @@ const Index = () => {
                 shadow
               />
             ) : (
-              ""
+              <span />
             )}
           </div>
           <div className="col-md">

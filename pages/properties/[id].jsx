@@ -27,7 +27,7 @@ const Index = (props) => {
             {item.city} {item.country}
           </p>
         </div>
-        <Carousel image={item.image} />
+        <Carousel image={item.image} height="500px" />
         <div className="row d-flex my-5">
           <DetailItem item={item} />
           <FormBook

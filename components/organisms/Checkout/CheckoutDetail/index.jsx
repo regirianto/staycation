@@ -1,11 +1,13 @@
 import Image from "next/image";
 import ReactNumberFormat from "react-number-format";
+import Carousel from "../../DetailItem/Carousel";
 
 const CheckoutDetail = (props) => {
-  const { src, price, night, place, city, country } = props;
+  const { image, price, night, place, city, country } = props;
   return (
     <>
-      <Image src={src} width={450} height={280} alt="'booking img" />
+      {/* <Image src={src} width={450} height={280} alt="'booking img" /> */}
+      {/* <Carousel image={image} height="250px" /> */}
       <div className="info-book-detail row d-flex ">
         <div className="detail-place col-md-5 mb-1">
           <p className="m-0 fs-5">{place}</p>

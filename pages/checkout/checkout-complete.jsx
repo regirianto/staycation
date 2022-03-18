@@ -1,14 +1,6 @@
 import Image from "next/image";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+import Link from "next/link";
 const CheckoutComplete = () => {
-  const router = useRouter();
-  useEffect(() => {
-    setTimeout(() => {
-      router.push("/");
-    }, 5000);
-  }, []);
-
   return (
     <div className="text-center vh-100">
       <div className="img-stepper mb-2">
@@ -25,9 +17,9 @@ const CheckoutComplete = () => {
         We will inform you via email later once the transaction has been
         accepted
       </p>
-      <a href="/" className="btn btn-primary px-4 py-2 mt-2">
-        Back to Home
-      </a>
+      <Link href="/">
+        <a className="btn btn-primary px-4 py-2 mt-2">Back to Home</a>
+      </Link>
     </div>
   );
 };
