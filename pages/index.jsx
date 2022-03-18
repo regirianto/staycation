@@ -1,19 +1,26 @@
-import BackyardCategories from "../components/organisms/BackyardCategories";
+import CategoriesPropertie from "../components/organisms/Categories";
 import Hero from "../components/organisms/Hero";
-import KitchenCategories from "../components/organisms/KitchenCategories";
-import LivingRoomCategories from "../components/organisms/LivingRoomCategories";
 import MostPicked from "../components/organisms/MostPicked";
 import Testimonial from "../components/organisms/Testimonial";
+import { getLandinPage } from "../services/landing-page";
 
-export default function Home() {
+export default function Home(props) {
+  const { itemsProperties } = props;
+  const mostPicks = itemsProperties.mostPicked;
+  const categoriesProperties = itemsProperties.categories;
   return (
     <>
       <Hero />
-      <MostPicked />
-      <BackyardCategories />
-      <LivingRoomCategories />
-      <KitchenCategories />
+      <MostPicked mostPicks={mostPicks} />
+      <CategoriesPropertie categoriesProperties={categoriesProperties} />
       <Testimonial />
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const itemsProperties = await getLandinPage();
+  return {
+    props: { itemsProperties: itemsProperties.data },
+  };
 }

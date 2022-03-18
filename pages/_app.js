@@ -5,6 +5,8 @@ import Navbar from "../components/organisms/Navbar";
 import Footer from "../components/organisms/Footer";
 import { Provider } from "react-redux";
 import store from "../config/redux/store";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -14,6 +16,17 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <Navbar />
       <div className="container  overflow-hidden">
+        <ToastContainer
+          position="top-right"
+          autoClose={6000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <Component {...pageProps} />
       </div>
       <Footer />

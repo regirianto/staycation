@@ -1,19 +1,24 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
-const Breadcrumb = () => {
+const Breadcrumb = (props) => {
+  const { currentPage, previousPage } = props;
+  const router = useRouter();
   return (
     <nav aria-label="breadcrumb ">
       <ol className="breadcrumb user-select-none">
         <li className="breadcrumb-item ">
-          <Link href="/">
-            <a className="text-decoration-none" style={{ color: "#b0b0b0" }}>
-              Home
-            </a>
-          </Link>
+          <p
+            className="text-decoration-none fw-light"
+            role="button"
+            onClick={() => router.back()}
+          >
+            {previousPage}
+          </p>
         </li>
         <li className="breadcrumb-item active" aria-current="page">
-          House Details
+          {currentPage}
         </li>
       </ol>
     </nav>

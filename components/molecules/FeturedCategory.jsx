@@ -2,25 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 
 const FeturedCategory = (props) => {
-  const { img, place, loc } = props;
+  const { img, place, city, country, href } = props;
   return (
     <div className="col-md mb-5 px-2">
       <div className="imgWrapper">
-        <Link href="/">
+        <Link href={href}>
           <a>
             <Image
               src={img}
               width={263}
               height={180}
-              alt=""
-              className="d-inline-block img-thumb"
+              alt={place}
+              className="d-inline-block rounded rounded-lg img-thumb"
             />
           </a>
         </Link>
       </div>
       <div className="info">
         <p className="place">{place}</p>
-        <p className="loc">{loc}</p>
+        <p className="loc">
+          {city},{country}
+        </p>
       </div>
     </div>
   );

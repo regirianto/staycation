@@ -1,7 +1,7 @@
 import React from "react";
 
 const Input = (props) => {
-  const { label, type, name } = props;
+  const { label, type, name, ...rest } = props;
   return (
     <div className="mb-3">
       <label htmlFor={name} className="form-label">
@@ -14,6 +14,7 @@ const Input = (props) => {
         aria-describedby="emailHelp"
         placeholder="Please type here..."
         name={name}
+        {...rest}
       />
     </div>
   );

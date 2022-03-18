@@ -1,11 +1,16 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import Button from "../../components/atom/Button";
 import CheckoutDetailForm from "../../components/organisms/Checkout/CheckoutDetail/CheckoutDetailForm";
 import CheckoutDetailPlace from "../../components/organisms/Checkout/CheckoutDetail/CheckoutDetailPlace";
-import Button from "../../components/atom/Button";
-import { useState } from "react";
 
-const index = () => {
-  const [submit, setsubmit] = useState(true);
+const Index = () => {
+  const { bookingData } = useSelector((state) => state.bookReducer);
+  const { itemID } = useSelector((state) => state.itemReducer);
+  const { firstname, lastname, email, phoneNumber } = bookingData;
+
+  const router = useRouter();
   return (
     <>
       <div className="img-stepper text-center mb-5">
@@ -19,18 +24,25 @@ const index = () => {
       </div>
       <div className="book-form row my-4 d-flex justify-content-center ">
         <CheckoutDetailPlace />
-        <CheckoutDetailForm />
+        <CheckoutDetailForm
+          firstname={firstname}
+          lastname={lastname}
+          email={email}
+          phoneNumber={phoneNumber}
+        />
       </div>
       <div className="d-flex justify-content-center align-items-center my-5">
         <div className="row d-flex flex-column mb-5">
           <div className="col-md">
-            {submit && (
+            {firstname && lastname && email && phoneNumber ? (
               <Button
                 title="Continue To Book"
                 addClassName="w-100 mb-3"
-                link="/checkout/checkout-payment"
+                onClick={() => router.push("/checkout/checkout-payment")}
                 shadow
               />
+            ) : (
+              ""
             )}
           </div>
           <div className="col-md">
@@ -38,7 +50,7 @@ const index = () => {
               title="Cancel"
               color="info"
               addClassName="w-100 text-white"
-              link="/"
+              onClick={() => router.replace(`/properties/${itemID._id}`)}
             />
           </div>
         </div>
@@ -47,4 +59,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

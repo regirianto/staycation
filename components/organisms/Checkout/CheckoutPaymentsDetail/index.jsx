@@ -1,52 +1,40 @@
 import Image from "next/image";
-import { useState } from "react";
-import Button from "../../../atom/Button";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import Payments from "../../../molecules/Payments";
+import ButtonPaymentSubmit from "./ButtonPaymentSubmit";
 import CheckoutDetailPaymentPrice from "./CheckoutDetailPaymentPrice";
 import ChekoutPaymentForm from "./ChekoutPaymentForm";
+import HeaderPaymentDetail from "./HeaderPaymentDetail";
 
 const CheckoutPayment = () => {
-  const [submit, setSubmit] = useState(true);
+  const { bookingData } = useSelector((state) => state.bookReducer);
+  const { itemID } = useSelector((state) => state.itemReducer);
+
+  const subTotal = itemID.price * bookingData.duration;
+  useEffect(() => {
+    console.log(bookingData);
+  }, []);
   return (
     <>
       <div className="img-stepper text-center mb-5">
         <Image src="/img/stepper2.svg" width={280} height={60} alt="stepper" />
       </div>
-      <div className="title text-center">
-        <h4>Payment</h4>
-        <p className="text-info fw-light">
-          Kindly follow the instructions below
-        </p>
-      </div>
+      <HeaderPaymentDetail
+        title={"Payment"}
+        subTitle={"Kindly follow the instructions below"}
+      />
       <div className="book-form row my-5 d-flex justify-content-center ">
         <div className="col-lg-6">
-          <CheckoutDetailPaymentPrice subTotal={100} />
+          <CheckoutDetailPaymentPrice subTotal={subTotal} />
           <Payments />
         </div>
-        <ChekoutPaymentForm />
+        <ChekoutPaymentForm
+          accountHolder={bookingData.accountHolder}
+          bankFrom={bookingData.bankFrom}
+        />
       </div>
-      <div className="d-flex justify-content-center align-items-center my-5">
-        <div className="row d-flex flex-column mb-5">
-          <div className="col-md">
-            {submit && (
-              <Button
-                title="Continue To Book"
-                addClassName="w-100 mb-3"
-                link="/checkout/checkout-complete"
-                shadow
-              />
-            )}
-          </div>
-          <div className="col-md">
-            <Button
-              title="Cancel"
-              color="info"
-              addClassName="w-100 text-white"
-              link="/"
-            />
-          </div>
-        </div>
-      </div>
+      <ButtonPaymentSubmit bookingData={bookingData} />
     </>
   );
 };

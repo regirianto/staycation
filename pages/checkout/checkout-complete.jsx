@@ -1,5 +1,14 @@
 import Image from "next/image";
-const checkoutComplete = () => {
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+const CheckoutComplete = () => {
+  const router = useRouter();
+  useEffect(() => {
+    setTimeout(() => {
+      router.push("/");
+    }, 5000);
+  }, []);
+
   return (
     <div className="text-center vh-100">
       <div className="img-stepper mb-2">
@@ -23,4 +32,4 @@ const checkoutComplete = () => {
   );
 };
 
-export default checkoutComplete;
+export default CheckoutComplete;

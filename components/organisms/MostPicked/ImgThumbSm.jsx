@@ -4,7 +4,7 @@ import ReactNumberFormat from "react-number-format";
 import Style from "../../../styles/FeaturedImg.module.css";
 
 const ImgThumbSm = (props) => {
-  const { img = "/", city, price, place, href = "/" } = props;
+  const { img, city, price, place, country, href } = props;
   return (
     <div className={`${Style.featuredWrapperSm} `}>
       <Link href={href}>
@@ -12,7 +12,7 @@ const ImgThumbSm = (props) => {
           <div className={`${Style.imgWrapperSm}`}>
             <Image
               src={img}
-              alt=""
+              alt={place}
               width={320}
               height={215}
               layout="fixed"
@@ -35,7 +35,9 @@ const ImgThumbSm = (props) => {
             <p className={`${Style.place}`}>
               {place}
 
-              <p className={`${Style.city}`}>{city}</p>
+              <p className={`${Style.city}`}>
+                {city} {country}
+              </p>
             </p>
           </div>
         </a>

@@ -1,6 +1,6 @@
 import Image from "next/image";
+import React from "react";
 import Button from "../../atom/Button";
-
 const Testimonial = () => {
   return (
     <div className="row  my-5">
@@ -17,11 +17,11 @@ const Testimonial = () => {
         <div className="row d-flex flex-column ">
           <div className="col-md ">
             <h3 className="mb-5">Happy Family</h3>
-            <Image src="/icon/ic_star.png" width={36} height={36} />
-            <Image src="/icon/ic_star.png" width={36} height={36} />
-            <Image src="/icon/ic_star.png" width={36} height={36} />
-            <Image src="/icon/ic_star.png" width={36} height={36} />
-            <Image src="/icon/ic_star.png" width={36} height={36} />
+            <Image src="/icon/ic_star.png" width={36} height={36} alt="" />
+            <Image src="/icon/ic_star.png" width={36} height={36} alt="" />
+            <Image src="/icon/ic_star.png" width={36} height={36} alt="" />
+            <Image src="/icon/ic_star.png" width={36} height={36} alt="" />
+            <Image src="/icon/ic_star.png" width={36} height={36} alt="" />
             <h4>
               What a great trip with my family and I should try again next time
               soon ...
@@ -36,5 +36,4 @@ const Testimonial = () => {
     </div>
   );
 };
-
-export default Testimonial;
+export default React.memo(Testimonial);

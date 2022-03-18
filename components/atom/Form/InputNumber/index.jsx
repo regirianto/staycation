@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 const Number = () => {
-  const { data } = useSelector((state) => state);
+  const { data } = useSelector((state) => state.dataReducer);
   const dispact = useDispatch();
 
   return (

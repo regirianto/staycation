@@ -7,8 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 const InputDate = () => {
   const [isShow, setIsShow] = useState(false);
-  const { data, name } = useSelector((state) => state);
-  const dispact = useDispatch();
+  const { data } = useSelector((state) => state.dataReducer);
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="input-group" onClick={() => setIsShow(!isShow)}>
@@ -35,9 +36,12 @@ const InputDate = () => {
         <DateRange
           editableDateInputs={true}
           duration={1}
-          onChange={(item) =>
-            dispact({ type: "UPDATE_DATA_BOOKING", payload: [item.selection] })
-          }
+          onChange={(item) => {
+            dispatch({
+              type: "UPDATE_DATA_BOOKING",
+              payload: [item.selection],
+            });
+          }}
           moveRangeOnFirstSelection={false}
           ranges={data}
           minDate={new Date()}

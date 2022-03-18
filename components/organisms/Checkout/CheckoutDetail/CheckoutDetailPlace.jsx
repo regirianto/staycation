@@ -1,15 +1,22 @@
 import CheckoutDetail from ".";
-
+import { useSelector } from "react-redux";
 const CheckoutDetailPlace = () => {
+  const IMG_URL = process.env.NEXT_PUBLIC_IMG_URL;
+  const { itemID } = useSelector((state) => state.itemReducer);
+  const { bookingData } = useSelector((state) => state.bookReducer);
+  const price = itemID.price;
+  const duration = bookingData.duration;
+  const total = price * duration;
+
   return (
     <div className="col-lg-6 info-book overflow-hidden">
       <CheckoutDetail
-        src="/img/img-featured-3.jpg"
-        place="Valhala Village"
-        city="Bandung"
-        country="Indonesia"
-        night={2}
-        price={48000}
+        src={`${IMG_URL}/${itemID.image[0].imageUrl}`}
+        place={itemID.title}
+        city={itemID.city}
+        country={itemID.country}
+        night={duration}
+        price={total}
       />
     </div>
   );
