@@ -11,8 +11,6 @@ const FormBook = (props) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const { data } = useSelector((state) => state.dataReducer);
-  // const startDate = data[0].startDate;
-  // const endDate = data[0].endDate;
   const startDate = moment(data[0].startDate).format("YYYY/MM/DD");
   const endDate = moment(data[0].endDate).format("YYYY/MM/DD");
 
@@ -74,7 +72,7 @@ const FormBook = (props) => {
               updateDataBook("duration", night);
               updateDataBook("bookingStartDate", startDate);
               updateDataBook("bookingEndDate", endDate);
-              router.push("/checkout");
+              router.push(`/checkout/${id}`);
             }}
           />
         </div>

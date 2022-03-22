@@ -4,8 +4,9 @@ import { useSelector } from "react-redux";
 import Button from "../../components/atom/Button";
 import CheckoutDetailForm from "../../components/organisms/Checkout/CheckoutDetail/CheckoutDetailForm";
 import CheckoutDetailPlace from "../../components/organisms/Checkout/CheckoutDetail/CheckoutDetailPlace";
+import { getDetailitem } from "../../services/detail-item-page";
 
-const Index = () => {
+const Index = ({ data }) => {
   const { bookingData } = useSelector((state) => state.bookReducer);
   const { itemID } = useSelector((state) => state.itemReducer);
   const { firstname, lastname, email, phoneNumber } = bookingData;
@@ -23,7 +24,7 @@ const Index = () => {
         </p>
       </div>
       <div className="book-form row my-4 d-flex justify-content-center ">
-        <CheckoutDetailPlace />
+        <CheckoutDetailPlace data={data.item} />
         <CheckoutDetailForm
           firstname={firstname}
           lastname={lastname}
@@ -60,3 +61,15 @@ const Index = () => {
 };
 
 export default Index;
+
+export const getServerSideProps = async ({ params }) => {
+  try {
+    const response = await getDetailitem(params.id);
+    const data = response.data;
+    return {
+      props: { data },
+    };
+  } catch (error) {
+    console.log(error);
+  }
+};

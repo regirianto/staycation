@@ -1,5 +1,5 @@
 import { SwiperSlide } from "swiper/react";
-import FeturedCategory from "../../molecules/feturedCategory";
+import FeturedCategory from "../../molecules/FeturedCategory";
 import Swipper from "../../molecules/Swipper";
 
 const CategoriesPropertie = (props) => {
